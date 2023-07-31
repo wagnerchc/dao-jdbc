@@ -52,7 +52,7 @@ public class Program {
 		System.out.println("Enter id for delete test: ");
 		int id = sc.nextInt();
 		sellerDao.deleteById(id);
-		System.out.println("User " + id + " deleted.");
+		System.out.println("Seller " + id + " deleted.");
 
 		System.out.println("=== Test 7: department findById ===");
 		Department dep = departmentDao.findById(3);
@@ -74,6 +74,12 @@ public class Program {
 		department.setName("Bikes");
 		departmentDao.update(department);
 		System.out.println("Update completed");
+		
+		System.out.println("=== Test 11: seller delete ===");
+		System.out.println("Enter id for delete test: ");
+		id = sc.nextInt();
+		departmentDao.deleteById(id);
+		System.out.println("Department " + id + " deleted.");
 		
 		sc.close();
 	}
