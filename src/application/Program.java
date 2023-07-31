@@ -54,11 +54,17 @@ public class Program {
 		sellerDao.deleteById(id);
 		System.out.println("User " + id + " deleted.");
 
-		System.out.println("=== Test 7: department findAll ===");
+		System.out.println("=== Test 7: department findById ===");
+		Department dep = departmentDao.findById(3);
+		System.out.println(dep);
+		
+		System.out.println("=== Test 8: department findAll ===");
 		List<Department> listDepartments = departmentDao.findAll();
 		for (Department obj : listDepartments) {
 			System.out.println(obj);
 		}
+		
+		
 
 		sc.close();
 	}
