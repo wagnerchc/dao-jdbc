@@ -6,6 +6,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import model.dao.DaoFactory;
+import model.dao.DepartmentDao;
 import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
@@ -17,6 +18,7 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		SellerDao sellerDao = DaoFactory.createSellerDao();
+		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 		
 		System.out.println("=== Test 1: seller findById ===");
 		Seller seller = sellerDao.findById(3);
@@ -51,6 +53,12 @@ public class Program {
 		int id = sc.nextInt();
 		sellerDao.deleteById(id);
 		System.out.println("User " + id + " deleted.");
+
+		System.out.println("=== Test 7: department findAll ===");
+		List<Department> listDepartments = departmentDao.findAll();
+		for (Department obj : listDepartments) {
+			System.out.println(obj);
+		}
 
 		sc.close();
 	}
